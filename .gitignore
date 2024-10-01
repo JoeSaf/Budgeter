@@ -1,0 +1,9 @@
+# Ignore virtual environment folder
+venv/
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore JSON data files (if you don’t want to share them)
+*.json
