@@ -35,7 +35,7 @@ budgeter/
 
    ```
    git clone https://github.com/JoeSaf/Budgeter.git
-   cd Budgeter
+   
 
 
 # How to setup
