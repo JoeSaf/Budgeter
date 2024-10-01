@@ -8,6 +8,7 @@ lib/
 # Ignore Python bytecode
 __pycache__/
 *.pyc
+pyvenv.cfg
 
 # Ignore JSON data files (if you don’t want to share them)
 *.json
