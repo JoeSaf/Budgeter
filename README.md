@@ -47,6 +47,10 @@ budgeter/
 # Activating the env
 ```
  source venv/bin/activate 
+```
+# For those using fish shell
+```
+ source venv/bin/activate.fish
 ``` 
 # On Windows use:
 ```
