@@ -56,6 +56,11 @@ budgeter/
 ```
 Budgeter\Scripts\activate
 ```
+# Move into the dir
+```
+cd Budgeter
+
+```
 
 # Run the requirements script
 ```
