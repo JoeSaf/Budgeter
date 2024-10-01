@@ -12,6 +12,7 @@ This is a simple Income and Expense Tracker application built using Python and T
 
 ## File structure
 
+```
 budgeter/
 │
 ├── budgeter.py           # Main script for managing income/expenses
@@ -21,6 +22,7 @@ budgeter/
 ├── requirements.txt      # Dependencies for the project
 ├── README.md             # Project instructions
 
+```
 ## Requirements
 
 - Python 3.x
