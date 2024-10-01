@@ -54,7 +54,7 @@ budgeter/
 ``` 
 # On Windows use:
 ```
-venv\Scripts\activate
+Budgeter\Scripts\activate
 ```
 
 # Run the requirements script
