@@ -117,16 +117,16 @@ balance_display = tk.Label(budget_frame, text="0")  # Placeholder for balance di
 balance_display.grid(row=3, column=1, padx=10, pady=10)
 
 # Buttons for budget management
-income_button = tk.Button(budget_frame, text="Add Income", command=add_income)
+income_button = tk.Button(budget_frame, text="Add Income", command=lambda: show_frame(add_income_frame))
 income_button.grid(row=4, column=0, padx=10, pady=10)
 
-expense_button = tk.Button(budget_frame, text="Add Expense", command=add_expense)
+expense_button = tk.Button(budget_frame, text="Add Expense", command=lambda: show_frame(add_expense_frame))
 expense_button.grid(row=4, column=1, padx=10, pady=10)
 
-calculate_button = tk.Button(budget_frame, text="Calculate Balance", command=calculate_balance)
+calculate_button = tk.Button(budget_frame, text="Calculate Balance", command=lambda: show_frame(calculate_balance_frame))
 calculate_button.grid(row=5, column=0, padx=10, pady=10)
 
-goal_button = tk.Button(budget_frame, text="Set Savings Goal", command=set_savings_goal)
+goal_button = tk.Button(budget_frame, text="Set Savings Goal", command=lambda: show_frame(set_savings_goal_frame))
 goal_button.grid(row=5, column=1, padx=10, pady=10)
 
 # Mini pages for each function
