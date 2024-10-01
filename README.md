@@ -42,7 +42,7 @@ budgeter/
  create a virtual python environment to have the project packages in an independent env
  # Creating a virtual environment
 ``` 
- python3 -m venv venv
+ python3 -m venv Budgeter
 ```
 # Activating the env
 ```
