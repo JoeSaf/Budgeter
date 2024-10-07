@@ -121,6 +121,7 @@ def create_balance_page(frame):
         current_balance_label.config(text=f"Current Balance: -Tsh {abs(current_balance):.2f}", fg="red")
     else:
         current_balance_label.config(text=f"Current Balance: Tsh {current_balance:.2f}", fg="black")
+        return current_balance
 
     # Place the balance label
     current_balance_label.grid(row=1, column=0, columnspan=2, padx=10, pady=10)

@@ -3,6 +3,8 @@ from tkinter import messagebox
 from expense_page import create_expense_page
 from income_page import create_income_page
 from balance_page import create_balance_page
+from balance_page import calculate_balance
+from savings_page import create_savings_page
 import json
 from datetime import datetime, timedelta
 import os
@@ -65,7 +67,7 @@ def show_frame(frame):
 # Create the main window
 root = tk.Tk()
 root.title("Budgeter")
-root.geometry("400x400")
+root.geometry("480x480")
 
 # Define frames for different pages
 budget_frame = tk.Frame(root)
@@ -85,36 +87,26 @@ def add_income():
 def add_expense():
     pass  # Placeholder for adding expense logic
 
-def calculate_balance():
-    pass  # Placeholder for balance calculation logic
-
 def set_savings_goal():
     pass  # Placeholder for setting savings goal logic
 
-# Labels and Entry widgets for budget management
-income_label = tk.Label(budget_frame, text="Income:")
-income_label.grid(row=0, column=0, padx=10, pady=10)
-
-income_entry = tk.Entry(budget_frame)
-income_entry.grid(row=0, column=1, padx=10, pady=10)
-
-expense_label = tk.Label(budget_frame, text="Expense:")
-expense_label.grid(row=1, column=0, padx=10, pady=10)
-
-expense_entry = tk.Entry(budget_frame)
-expense_entry.grid(row=1, column=1, padx=10, pady=10)
-
-goal_label = tk.Label(budget_frame, text="Savings Goal:")
-goal_label.grid(row=2, column=0, padx=10, pady=10)
-
-goal_entry = tk.Entry(budget_frame)
-goal_entry.grid(row=2, column=1, padx=10, pady=10)
-
-balance_label = tk.Label(budget_frame, text="Total Balance:")
+#Balance display
+balance_label = tk.Label(budget_frame, text="Your Current Balance:")
 balance_label.grid(row=3, column=0, padx=10, pady=10)
 
-balance_display = tk.Label(budget_frame, text="0")  # Placeholder for balance display
+current_balance_label = tk.Label(frame, font=('bold', 14))
+balance_label = current_balance_label
+current_balance = calculate_balance()
+
+color_balance = current_balance
+
+#balance_display = tk.Label(budget_frame, text=f"Tsh {color_balance}")  # Placeholder for balance display
+if color_balance < 0:
+    balance_display = tk.Label(budget_frame, text=f"Tsh {color_balance}", fg="red")
+else:
+    balance_display = tk.Label(budget_frame, text=f"Tsh {color_balance}", fg="blue")
 balance_display.grid(row=3, column=1, padx=10, pady=10)
+
 
 # Buttons for budget management
 income_button = tk.Button(budget_frame, text="Add Income", command=lambda: show_frame(add_income_frame))
@@ -145,7 +137,7 @@ create_balance_page(calculate_balance_frame)
 
 # Set Savings Goal Page
 set_savings_goal_label = tk.Label(set_savings_goal_frame, text="Set your savings goal here:")
-set_savings_goal_label.pack(pady=20)
+create_savings_page(set_savings_goal_frame)
 
 # Countdown timer page (countdown_frame)
 month_length_label = tk.Label(countdown_frame, text="Enter financial month length (days):")
